@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Lot of US Definitive and Commemorative Stamps (1920s-1970s)",
+    "country": "USA",
+    "year": "1920s-1970s",
+    "description": "A lot of United States postage stamps on an album page fragment. Includes: a strip of five 2c red Washington (c. 1922-25, e.g., Scott #554); a strip of three 1c green Washington (c. 1922-25, e.g., Scott #552); a vertical and a horizontal pair of 3c purple Statue of Liberty (1954, Scott #1035); a single used 3c Statue of Liberty; a 3c blue Washington embossed envelope cut square (c. 1916, e.g., Scott #U436); a horizontal pair of 3c blue Jefferson (1938, Scott #807); a strip of three 10c green American Clock (1975, Scott #1616); and a pair of 5c Christmas (1973, Scott #1508). Most are unused, attached to the page.",
+    "estimatedValue": "1.00-3.00",
+    "auctionType": "Lot Auction",
+    "isRejected": false,
+    "itemType": "stamp",
+    "condition": "Mixed (Unused, Used, Cut Square)",
+    "confidenceBreakdown": {
+      "identification": 0.95,
+      "condition": 0.9,
+      "valuation": 0.95
+    },
+    "currency": "USD",
+    "imageSide": "front",
+    "justification": "This is a collection of multiple distinct stamps sold together as a single lot.",
+    "tags": [
+      "USA stamps",
+      "lot",
+      "collection",
+      "definitive",
+      "commemorative",
+      "Washington",
+      "Jefferson",
+      "Statue of Liberty",
+      "Americana Series"
+    ],
+    "verificationNotes": [
+      "Lot contains a mix of common US definitive and commemorative stamps from the 1920s to 1970s.",
+      "Condition is mixed, with some items appearing unused (likely hinged) and others used.",
+      "The blue circular item is a cut square from a stamped envelope."
+    ],
+    "id": 1768010009274,
+    "imageUrl": "blob:http://localhost:3001/a5c60fa2-f2c8-46ca-9dfc-b8bacdabec82",
+    "similarityScore": 0
+  }
+]
