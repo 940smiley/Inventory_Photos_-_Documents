@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventory Listing Console</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Recovered Treasures Inventory</p>
+          <h1>Listing Console</h1>
+        </div>
+        <div class="actions">
+          <button id="rescanButton" type="button">Rescan manifest</button>
+          <button id="exportCsvButton" type="button">Export eBay CSV</button>
+          <button id="exportJsonButton" type="button">Export JSON</button>
+          <a class="buttonLink" href="./stamplicity-share.json" download>Stamplicity handoff</a>
+        </div>
+      </section>
+
+      <section class="statusGrid" aria-label="Inventory summary">
+        <div><span id="totalItems">0</span><p>media files</p></div>
+        <div><span id="listingReady">0</span><p>listing rows</p></div>
+        <div><span id="stampCount">0</span><p>stamp/postal</p></div>
+        <div><span id="visibleCount">0</span><p>visible</p></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar" aria-label="Inventory controls">
+          <label>Search<input id="searchInput" type="search" placeholder="folder, filename, category"></label>
+          <label>Category<select id="categoryFilter"><option value="">All categories</option></select></label>
+          <label>Vision endpoint<input id="endpointInput" type="url" placeholder="http://localhost:8787/analyze"></label>
+          <p class="hint">Optional. Use a local Image Pro or Collectible AI endpoint that accepts an image URL or file path and returns JSON. API keys should stay on your machine or server.</p>
+          <label class="filePicker">Scan local folder<input id="directoryInput" type="file" webkitdirectory multiple></label>
+          <p class="hint">For private scans, choose a folder locally. The app categorizes paths in your browser and keeps edits in local storage.</p>
+          <div class="ruleList">
+            <h2>Routing Rules</h2>
+            <p>Stamp, postal, postcard, cover, and philatelic paths are routed to the Stamplicity handoff.</p>
+            <p>Books, cards, money, art, apparel, media, toys, instruments, and ephemera are mapped to marketplace listing groups.</p>
+          </div>
+        </aside>
+
+        <section class="inventoryPanel" aria-label="Inventory results">
+          <div class="panelHeader">
+            <div>
+              <h2>Inventory</h2>
+              <p id="manifestMeta">Loading manifest...</p>
+            </div>
+            <label class="compactToggle"><input id="stampOnlyToggle" type="checkbox">Stamplicity only</label>
+          </div>
+          <div id="inventoryGrid" class="inventoryGrid"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="itemTemplate">
+      <article class="item">
+        <button class="thumbButton" type="button">
+          <img alt="" loading="lazy">
+          <span class="mediaBadge"></span>
+        </button>
+        <div class="itemBody">
+          <div class="row">
+            <h3></h3>
+            <span class="confidence"></span>
+          </div>
+          <p class="path"></p>
+          <div class="tags"></div>
+          <label>Listing title<input class="titleInput" type="text"></label>
+          <label>Notes<textarea class="notesInput" rows="2"></textarea></label>
+          <div class="itemActions">
+            <button class="analyzeButton" type="button">Analyze</button>
+            <button class="copyButton" type="button">Copy row</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <dialog id="previewDialog">
+      <button id="closePreview" type="button" aria-label="Close preview">Close</button>
+      <img id="previewImage" alt="">
+      <p id="previewCaption"></p>
+    </dialog>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
