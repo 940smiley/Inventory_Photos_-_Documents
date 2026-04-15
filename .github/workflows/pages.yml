@@ -27,17 +27,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Prepare static site
-        shell: bash
-        run: |
-          mkdir -p _site
-          cp -R docs/. _site/
-          cp -R inventory-photographs-and-scans _site/inventory-photographs-and-scans
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: docs
 
       - name: Deploy
         id: deployment
